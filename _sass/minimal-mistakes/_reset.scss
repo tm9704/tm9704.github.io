@@ -15,7 +15,10 @@ html {
   }
 
   @include breakpoint($large) {
-    font-size: 20px;
+    /* devinlife : large 페이지 일때 폰트 사이즈 축소 20px->18px */
+    /* font-size: 20px; */
+
+    font-size: 18px;
   }
 
   @include breakpoint($x-large) {
