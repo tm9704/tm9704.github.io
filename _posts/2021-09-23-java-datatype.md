@@ -73,3 +73,27 @@ char hangel2 = '가';
 boolean b1 = true;
 boolean b2 = false;
 ```
+
+## 5. 자료형 없이 변수 사용하기
+
+Java 10 에서만 가능한 지역 변수 자료형 추론이 있습니다. (local variable type inference)<br/>
+변수에 대입되는 값을 보고 컴파일러가 추론해서 적당한 자료형을 대입해줍니다.<br/>
+(지역 변수 한정)
+
+예시
+
+```java
+var num = 10;
+var dNum = 10.0;
+var str = "hello";
+```
+
+위의 코드는
+
+```java
+int num = 10;
+double dNum = 10.0;
+String str = "hello";
+```
+
+와 동일합니다.
