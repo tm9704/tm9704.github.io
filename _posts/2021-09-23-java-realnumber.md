@@ -7,7 +7,8 @@ categories:
   - Java
 tags:
   - Java
-last_modified_at: 2021-09-23T12:36:00
+date: "2021-09-23 12:20:00"
+last_modified_at: "2021-09-23 12:36:00"
 ---
 
 이번 포스트에서는 실수 표현 방식에 대해 공부하겠습니다.

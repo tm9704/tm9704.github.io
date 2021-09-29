@@ -7,7 +7,8 @@ categories:
   - Java
 tags:
   - Java
-last_modified_at: 2021-09-24T17:49:00
+date: "2021-09-24 17:35:00"
+last_modified_at: "2021-09-24 17:49:00"
 ---
 
 이번 포스트에서는 switch문에 대해 공부하겠습니다.<br/>

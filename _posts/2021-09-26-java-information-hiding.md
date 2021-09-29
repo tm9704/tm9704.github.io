@@ -7,7 +7,8 @@ categories:
   - Java
 tags:
   - Java
-last_modified_at: 2021-09-26T16:30:00
+date: "2021-09-26 16:15:00"
+last_modified_at: "2021-09-26 16:30:00"
 ---
 
 ## 1. 접근 제어자(access modifier)

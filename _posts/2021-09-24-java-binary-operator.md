@@ -7,7 +7,8 @@ categories:
   - Java
 tags:
   - Java
-last_modified_at: 2021-09-24T15:30:00
+date: "2021-09-24 15:15:00"
+last_modified_at: "2021-09-24 15:30:00"
 ---
 
 우선 이항 연산자에 대해 공부하기 전에 항과 연산자의 개념에 대해 공부하겠습니다.

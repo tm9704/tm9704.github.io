@@ -7,7 +7,8 @@ categories:
   - Java
 tags:
   - Java
-last_modified_at: 2021-09-23T16:14:00
+  date: "2021-09-23 16:10:00"
+last_modified_at: "2021-09-23T16:14:00"
 ---
 
 1과 1.0은 동일한 값입니다. 그러나 Java에서는 1.0과 1은 다른 값입니다.<br/>

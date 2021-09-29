@@ -7,7 +7,8 @@ categories:
   - Java
 tags:
   - Java
-last_modified_at: 2021-09-24T17:25:00
+date: "2021-09-24 17:10:00"
+last_modified_at: "2021-09-24 17:25:00"
 ---
 
 특정 조건이 만족될 때에만 실행하게 하고 싶다면 if문을 사용하면 됩니다.

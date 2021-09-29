@@ -7,7 +7,8 @@ categories:
   - Java
 tags:
   - Java
-last_modified_at: 2021-09-26T15:50:00
+date: "2021-09-26 15:30:00"
+last_modified_at: "2021-09-26T15:50:00"
 ---
 
 앞선 포스트들에서 int, long, float등 기본 자료형들을 사용해왔습니다.<br/>

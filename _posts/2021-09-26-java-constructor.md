@@ -7,7 +7,8 @@ categories:
   - Java
 tags:
   - Java
-last_modified_at: 2021-09-26T15:12:00
+date: "2021-09-26 15:00:00"
+last_modified_at: "2021-09-26 15:12:00"
 ---
 
 앞선 포스트에서 new 키워드 뒤에 Student()가 있었는데 이것을 생성자(constructor)이라고 합니다.<br/>

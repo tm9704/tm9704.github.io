@@ -7,7 +7,8 @@ categories:
   - Java
 tags:
   - Java
-last_modified_at: 2021-09-27T16:24:00
+date: "2021-09-27 16:10:00"
+last_modified_at: "2021-09-27 16:24:00"
 ---
 
 이전 포스트에서는 기본 자료형 배열에 대해 공부했습니다.<br/>

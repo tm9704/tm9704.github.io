@@ -7,7 +7,8 @@ categories:
   - Java
 tags:
   - Java
-last_modified_at: 2021-09-26T17:10:00
+date: "2021-09-26 17:00:00"
+last_modified_at: "2021-09-26 17:10:00"
 ---
 
 인스턴스 변수는 인스턴스가 생성되었을 때 접근이 가능한 변수입니다.<br/>

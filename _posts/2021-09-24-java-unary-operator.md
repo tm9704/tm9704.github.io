@@ -7,7 +7,8 @@ categories:
   - Java
 tags:
   - Java
-last_modified_at: 2021-09-24T16:34:00
+date: "2021-09-24 16:15:00"
+last_modified_at: "2021-09-24 16:34:00"
 ---
 
 단항 연산자는 피연산자가 하나인 연산자로써 이항 연산자보다 개수가 적습니다.

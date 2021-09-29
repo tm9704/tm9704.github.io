@@ -7,7 +7,8 @@ categories:
   - Java
 tags:
   - Java
-last_modified_at: 2021-09-27T15:30:00
+date: "2021-09-27 15:15:00"
+last_modified_at: "2021-09-27 15:30:00"
 ---
 
 이번 포스트에서는 1차원, 다차원 배열에 대해 공부하겠습니다.<br/>

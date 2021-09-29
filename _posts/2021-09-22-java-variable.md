@@ -1,5 +1,5 @@
 ---
-title: "Java(3) - 변수의 이해와 활용"
+title: "Java(2) - 변수의 이해와 활용"
 excerpt: "Java Variable"
 toc: true
 toc_sticky: true

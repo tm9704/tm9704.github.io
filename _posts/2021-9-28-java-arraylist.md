@@ -7,7 +7,8 @@ categories:
   - Java
 tags:
   - Java
-last_modified_at: 2021-09-28T17:00:00
+date: "2021-09-28 16:40:00"
+last_modified_at: "2021-09-28 17:00:00"
 ---
 
 이번 포스트에서는 java.util 패키지에서 제공하는 ArrayList에 대해 공부하겠습니다.<br/>
