@@ -1,5 +1,5 @@
 ---
-title: "Java 객체 배열"
+title: "Java(21) - 객체 배열"
 excerpt: "Java Object Array"
 toc: true
 toc_sticky: true

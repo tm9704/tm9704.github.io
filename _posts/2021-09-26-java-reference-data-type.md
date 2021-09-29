@@ -1,5 +1,5 @@
 ---
-title: "Java 참조 자료형"
+title: "Java(16) - 참조 자료형"
 excerpt: "Java Reference Data Type"
 toc: true
 toc_sticky: true

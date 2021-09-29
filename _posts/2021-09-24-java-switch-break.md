@@ -1,5 +1,5 @@
 ---
-title: "Java 조건문(switch, break)"
+title: "Java(12) - 조건문(switch, break)"
 excerpt: "Java Conditional Switch, Break"
 toc: true
 toc_sticky: true

@@ -1,5 +1,5 @@
 ---
-title: "Java 이항 연산자"
+title: "Java(8) - 이항 연산자"
 excerpt: "Java Binary Operator"
 toc: true
 toc_sticky: true

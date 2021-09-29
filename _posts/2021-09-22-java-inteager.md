@@ -1,5 +1,5 @@
 ---
-title: "정수 표현방식의 이해"
+title: "Java(2) - 정수 표현방식의 이해"
 excerpt: "Java Inteager"
 toc: true
 toc_sticky: true

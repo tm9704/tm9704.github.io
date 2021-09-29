@@ -1,5 +1,5 @@
 ---
-title: "Java 단항 연산자"
+title: "Java(9) - 단항 연산자"
 excerpt: "Java Unary Operator"
 toc: true
 toc_sticky: true

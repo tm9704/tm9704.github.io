@@ -1,5 +1,5 @@
 ---
-title: "Java 비트 연산자"
+title: "Java(10) - 비트 연산자"
 excerpt: "Java Bit Operator"
 toc: true
 toc_sticky: true

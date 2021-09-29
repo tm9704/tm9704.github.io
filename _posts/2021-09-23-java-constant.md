@@ -1,5 +1,5 @@
 ---
-title: "Java 상수"
+title: "Java(6) - 상수"
 excerpt: "Java Constant"
 toc: true
 toc_sticky: true

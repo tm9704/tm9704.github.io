@@ -1,5 +1,5 @@
 ---
-title: "Java 조건문(if, ifelse)"
+title: "Java(11) - 조건문(if, ifelse)"
 excerpt: "Java Conditional If, Else"
 toc: true
 toc_sticky: true

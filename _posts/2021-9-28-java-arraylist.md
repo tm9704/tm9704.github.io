@@ -1,5 +1,5 @@
 ---
-title: "Java 배열 리스트"
+title: "Java(22) - 배열 리스트"
 excerpt: "Java Array List"
 toc: true
 toc_sticky: true

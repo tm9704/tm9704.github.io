@@ -1,5 +1,5 @@
 ---
-title: "Java 정보 은닉"
+title: "Java(17) - 정보 은닉"
 excerpt: "Java Information Hiding"
 toc: true
 toc_sticky: true

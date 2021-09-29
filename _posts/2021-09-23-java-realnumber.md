@@ -1,5 +1,5 @@
 ---
-title: "실수 표현방식의 이해"
+title: "Java(4) - 실수 표현방식의 이해"
 excerpt: "Java Real Number"
 toc: true
 toc_sticky: true

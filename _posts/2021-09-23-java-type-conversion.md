@@ -1,5 +1,5 @@
 ---
-title: "형 변환"
+title: "Java(7) - 형 변환"
 excerpt: "Java Type Conversion"
 toc: true
 toc_sticky: true

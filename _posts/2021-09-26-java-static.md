@@ -1,5 +1,5 @@
 ---
-title: "Java Static"
+title: "Java(18) - Static"
 excerpt: "Java Static"
 toc: true
 toc_sticky: true

@@ -1,5 +1,5 @@
 ---
-title: "Java Singleton Pattern"
+title: "Java(19) - Singleton Pattern"
 excerpt: "Java Singleton Pattern"
 toc: true
 toc_sticky: true
@@ -7,7 +7,7 @@ categories:
   - Java
 tags:
   - Java
-last_modified_at: 2021-09-26T17:10:00
+last_modified_at: 2021-09-26T18:10:00
 ---
 
 static의 응용인 singleton pattern에 대해 공부하겠습니다.<br/>

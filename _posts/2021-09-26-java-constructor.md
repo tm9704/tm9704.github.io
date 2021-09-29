@@ -1,5 +1,5 @@
 ---
-title: "Java 생성자"
+title: "Java(15) - 생성자"
 excerpt: "Java Constructor"
 toc: true
 toc_sticky: true

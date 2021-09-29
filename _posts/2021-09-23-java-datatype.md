@@ -1,5 +1,5 @@
 ---
-title: "자료형의 이해"
+title: "Java(5) - 자료형의 이해"
 excerpt: "Java Data Type"
 toc: true
 toc_sticky: true
