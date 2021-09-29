@@ -7,7 +7,8 @@ categories:
   - Java
 tags:
   - Java
-last_modified_at: 2021-09-23T14:51:00
+date: "2021-09-23 14:20:00"
+last_modified_at: "2021-09-23 14:51:00"
 ---
 
 이번 포스팅에서는 상수에 대해 공부하겠습니다.

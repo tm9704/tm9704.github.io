@@ -7,7 +7,8 @@ categories:
   - Java
 tags:
   - Java
-last_modified_at: 2021-09-22T15:44:00
+date: "2021-09-22 15:20:00"
+last_modified_at: "2021-09-22 15:44:00"
 ---
 
 이번에는 Java 변수를 이해하고 활용하는 방법을 공부하겠습니다.

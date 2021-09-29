@@ -7,7 +7,8 @@ categories:
   - Java
 tags:
   - Java
-last_modified_at: 2021-09-22T17:04:00
+date: "2021-09-22 16:55:00"
+last_modified_at: "2021-09-22 17:04:00"
 ---
 
 자료형에 대해 공부하기 전에 정수와 실수를 표현하는 방법에 대해 공부하겠습니다.<br/>
