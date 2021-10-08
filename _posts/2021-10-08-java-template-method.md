@@ -1,5 +1,5 @@
 ---
-title: "Java(29) 추상 클래스 응용 - 템플릿 메서드"
+title: "Java(29) - 추상 클래스 응용 : 템플릿 메서드"
 excerpt: "Java Template Method"
 toc: true
 toc_sticky: true

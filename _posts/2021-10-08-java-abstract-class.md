@@ -1,5 +1,5 @@
 ---
-title: "Java(28) 추상 클래스"
+title: "Java(28) - 추상 클래스"
 excerpt: "Java Abstract Class"
 toc: true
 toc_sticky: true
