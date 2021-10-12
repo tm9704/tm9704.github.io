@@ -159,4 +159,4 @@ public class Main {
 
 각각 AClazz, BClazz에서 단 한개의 SocketClient 객체를 받고<br/>
 Main에서 같은지 확인한 코드입니다.<br/>
-결과는 true로, 단 한개의 동일한 객체를 가집니다.<br/>
+결과는 true로, 단 한개의 동일한 객체를 공유합니다.<br/>
