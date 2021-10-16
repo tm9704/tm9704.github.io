@@ -85,6 +85,7 @@ Collection, Map 인터페이스는 뒤에 포스트에서 자세히 다루겠습
    ![linkedlist](/images/linkedlist.png)<br/>
 
 3. 스택 (Stack)<br/>
+
    스택 역시 선형 자료구조입니다.<br/>
    LIFO(Last In First Out)의 구조를 가지고 있습니다.<br/>
    즉 후입 선출로 먼저 들어간게 나중에 나오는 구조를 가집니다.<br/>
@@ -95,6 +96,7 @@ Collection, Map 인터페이스는 뒤에 포스트에서 자세히 다루겠습
    ![stack](/images/stack.png)<br/>
 
 4. 큐(Queue)<br/>
+
    큐 역시 선형 자료구조입니다.<br/>
    FIFO(First In First Out)의 구조를 가지고 있습니다.<br/>
    즉 선입 선출로 먼저 들어간게 먼저 나오는 구조를 가집니다.<br/>
@@ -105,6 +107,7 @@ Collection, Map 인터페이스는 뒤에 포스트에서 자세히 다루겠습
    ![queue](/images/queue.png)<br/>
 
 5. 해시(Hash)<br/>
+
    해시는 검색을 위한 자료구조입니다.<br/>
    위의 자료구조와는 다르게 비선형 자료구조입니다.<br/>
 
@@ -117,12 +120,14 @@ Collection, Map 인터페이스는 뒤에 포스트에서 자세히 다루겠습
    해시에 관한 것은 뒤에서 더 자세히 다루겠습니다.<br/>
 
 6. 트리 (Tree)<br/>
+
    트리는 비선형 자료구조입니다.<br/>
    부모 노드와 자식 노드간의 연결로 이루어진 자료구조입니다.<br/>
 
    jdk클래스에 TreeSet, TreeMap 클래스가 있으며, 정렬을 지원합니다.<br/>
 
-7. 이진트리 (Binary Tree)
+7. 이진트리 (Binary Tree)<br/>
+
    이진트리는 비선형 자료구조입니다.<br/>
    부모노드 하위의 자식 노드가 2개보다 작거나 같은 경우의 트리입니다.<br/>
 
@@ -133,6 +138,7 @@ Collection, Map 인터페이스는 뒤에 포스트에서 자세히 다루겠습
    부모 노드보다 작은 경우 왼쪽에, 큰 경우 오른쪽에 값을 넣습니다.<br/>
 
 8. 힙(heap)<br/>
+
    힙은 우선순위 큐(Priority Queue)를 구현한 자료구조 입니다.<br/>
 
    Max Heap은 부모 노드가 자식 노드보다 항상 크거나 같은 값을 갖는 경우입니다.<br/>
@@ -144,6 +150,7 @@ Collection, Map 인터페이스는 뒤에 포스트에서 자세히 다루겠습
    ![heap](/images/heap.png)<br/>
 
 9. 그래프(Graph)<br/>
+
    그래프는 정점(vertex)과 간선(edge)들의 유한 집합입니다.<br/>
    (G = (V,E))<br/>
 
