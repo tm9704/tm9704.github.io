@@ -8,7 +8,7 @@ categories:
 tags:
   - Spring
 date: "2021-10-12 15:45:00"
-last_modified_at: "2021-10-12 16:10:00"
+last_modified_at: "2021-10-13 16:10:00"
 ---
 
 ## 1. 디자인 패턴
@@ -160,3 +160,21 @@ public class Main {
 각각 AClazz, BClazz에서 단 한개의 SocketClient 객체를 받고<br/>
 Main에서 같은지 확인한 코드입니다.<br/>
 결과는 true로, 단 한개의 동일한 객체를 공유합니다.<br/>
+
+## 5. Adapter Pattern
+
+Adapter는 실생활에서는 110v를 220v로 변경해주거나, 그 반대로 해주는 흔히 돼지코라고<br/>
+부르는 변환기를 예로 들 수 있습니다.<br/>
+
+즉 호환성이 없는 기존 클래스의 인터페이스를 변환하여 굳이 코드를 변경하지 않고 재사용할 수 있도록 합니다.<br/>
+
+SOLID중에서 개방페쇄 원칙(OCP)를 따릅니다.<br/>
+
+![adapter](/images/adapter.png)<br/>
+
+위 그림은 umld을 공부하고 다시 보겠습니다.<br/>
+예시를 보겠습니다.<br/>
+
+```java
+
+```
