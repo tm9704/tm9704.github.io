@@ -235,3 +235,23 @@ public final class Integer extends Number implements Comparable<integer>{
         }
     }
    ```
+
+## 5. 해싱, 요소 순회
+
+1. 해싱(Hashing)<br/>
+   해싱은 자료를 검색하기 위한 구조입니다.<br/>
+
+   - key에 대한 자료를 검색하기 위한 사전(dictionary) 개념의 자료구조
+   - key는 유일하고 이에 대한 value의 쌍으로 저장
+   - index = h(key); 해시 함수가 key에 대한 인덱스를 반환해줌,<br/>
+     해당 인덱스 위치에 자료를 저장하거나 검색하게 됨
+   - 해시 함수에 의해 인덱스 연산이 산술적으로 가능
+   - 저장되는 메모리 구조를 해시 테이블이라고 함
+   - jdk 클래스: HashMap, Properties
+
+2. 요소의 순회란<br/>
+   - 컬랙션 프레임워크에 저장된 요소들을 하나씩 차례로 참조하는 것
+   - 순서가 있는 List 인터페이스의 경우 Iterator를 사용하지 않고<br/>
+     get(i) 메서드 활용
+   - Set 인터페이스의 경우 get(i) 메서드가 제공되지 않으므로 Iterator를 이용하여<br/>
+     객체를 순회
