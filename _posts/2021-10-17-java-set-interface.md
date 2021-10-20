@@ -220,3 +220,212 @@ TreeSet\<Member> treeSet = new TreeSet\<Member>(new Member());<br/>
 (String, Integer 등 JDK의 많은 클래스들은 이미 정의되어 있음)<br/>
 
 ## 6. TreeSet 예시
+
+1번 예제<br/>
+
+```java
+import java.util.*;
+
+public class TreeSetTest {
+
+	public static void main(String[] args) {
+
+		TreeSet<String> treeSet = new TreeSet<String>();
+		treeSet.add("홍길동");
+		treeSet.add("강감찬");
+		treeSet.add("이순신");
+
+		for(String str : treeSet) {
+			System.out.println(str);
+		}
+	}
+}
+```
+
+이 상황에서는 순서대로 정렬이 됩니다.<br/>
+해당 이유는 String에는 이미 Comparable이 구현되어있기 때문입니다.<br/>
+(기본적으로 오름차순)<br/>
+
+2번 예제<br/>
+
+```java
+import java.util.*;
+
+class Member implements Comparable<Member>{
+
+	private int memberId;
+	private String memberName;
+
+	public Member() {}
+	public Member(int memberId, String memberName) {
+		this.memberId = memberId;
+		this.memberName = memberName;
+	}
+	public int getMemberId() {
+		return memberId;
+	}
+	public void setMemberId(int memberId) {
+		this.memberId = memberId;
+	}
+	public String getMemberName() {
+		return memberName;
+	}
+	public void setMemberName(String memberName) {
+		this.memberName = memberName;
+	}
+
+	public String toString() {
+		return memberName + "회원님의 아이디는 " + memberId + "입니다.";
+	}
+	@Override
+	public int hashCode() {
+		return memberId;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if(obj instanceof Member) {
+			Member member = (Member)obj;
+			return (this.memberId == member.memberId);
+		}
+
+		return false;
+	}
+	@Override
+	public int compareTo(Member member) {
+
+		return (this.memberId - member.memberId);
+	}
+
+	/*
+	 * public int compareTo(Member member){
+	 *
+	 *		return this.memberName.compareTo(member.getMemberName());
+	 *		String은 이미 구현되어있음.
+	 * }
+	 */
+
+	/*
+	 * public class Member implements Comparator<Member>{
+	 * ...
+	 *
+	 * 	@Override
+	 * 	public int compare(Member member1, Member member2){
+	 *  	member1이 this member2가 매개변수.
+	 *  	return (ember1.memberId - member2.memberId);
+	 * 	}
+	 * 	Comparator는  TreeSet 생성자에 명시 해줘야함.
+	 * 	ex) treeSet = new TreeSet<Member>(new Member());
+	 *
+	 * }
+	 */
+}
+
+class MemberTreeSet {
+
+	private TreeSet<Member> treeSet;
+
+	public MemberTreeSet() {
+		treeSet = new TreeSet<Member>();
+	}
+
+	public void addMember(Member member) {
+		treeSet.add(member);
+	}
+
+	public boolean removeMember(int memberId) {
+		Iterator<Member> ir = treeSet.iterator();
+		while(ir.hasNext()) {
+			Member member = ir.next();
+			if(member.getMemberId() == memberId) {
+				treeSet.remove(member);
+				return true;
+			}
+		}
+
+		System.out.println(memberId + "번호가 존재하지 않습니다.");
+		return false;
+	}
+
+	public void showAllMember() {
+		for(Member member : treeSet) {
+			System.out.println(member);
+		}
+		System.out.println();
+	}
+}
+
+public class MemberTreeSetTest {
+
+	public static void main(String[] args) {
+
+		MemberTreeSet manager = new MemberTreeSet();
+
+		Member memberLee = new Member(300, "Lee");
+		Member memberKim = new Member(100, "Kim");
+		Member memberPark = new Member(200, "Park");
+
+
+		manager.addMember(memberLee);
+		manager.addMember(memberKim);
+		manager.addMember(memberPark);
+
+		manager.showAllMember();
+	}
+
+	/*
+	 * TreeSet<String> set = new TreeSet<String>(new MyCompare());
+	 * set.add("Park");
+	 * set.add("Kim");
+	 * set.add("Lee");
+	 *
+	 * System.out.println(set);
+	 */
+}
+```
+
+Member 클래스에서 주석처리된 이름으로 정렬하기 위한 compareTo의 경우<br/>
+이름은 String이기 때문에 이미 compareTo가 구현되어 있으므로,<br/>
+comparTo(member.getMemberName())을 사용하면 됩니다.<br/>
+
+또 주석처리된 부분을 보면, Comparator를 구현한 것입니다.<br/>
+compare메서드를 구현해야하고, Comparator은 default constructor에<br/>
+명시를 해줘야합니다.<br/>
+
+이번에는 Comparator예시를 보겠습니다.<br/>
+
+```java
+import java.util.Comparator;
+import java.util.TreeSet;
+
+class MyCompare implements Comparator<String>{
+
+	@Override
+	public int compare(String s1, String s2) {
+
+		return s1.compareTo(s2)*(-1);
+	}
+
+}
+
+public class ComparatorTest {
+
+	public static void main(String[] args) {
+
+		TreeSet<String> treeSet = new TreeSet<String>(new MyCompare());
+		treeSet.add("홍길동");
+		treeSet.add("강감찬");
+		treeSet.add("이순신");
+
+		for(String str : treeSet) {
+			System.out.println(str);
+		}
+	}
+}
+```
+
+String의 경우 자동으로 오름차순으로 정렬되게 구현되어 있습니다.<br/>
+내림차순으로 정렬하기 위해서는 위 코드처럼 MyCompare 클래스를 통해<br/>
+Comparator를 구현해주면 됩니다.<br/>
+
+Comparator은 보통 compare가 이미 구현되어있는 클래스가 있는 경우<br/>
+해당 클래스에 대해 다른 방식의 정렬을 제공할 때 많이 사용합니다.<br/>
