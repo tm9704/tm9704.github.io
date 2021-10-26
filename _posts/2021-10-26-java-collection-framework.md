@@ -8,7 +8,7 @@ categories:
 tags:
   - Java
 date: "2021-10-26 14:10:00"
-last_modified_at: "2021-10-26 15:30:00"
+last_modified_at: "2021-10-26 14:30:00"
 ---
 
 ## 1. 컬렉션 프레임워크의 이해
