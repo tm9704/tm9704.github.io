@@ -237,4 +237,94 @@ iterator 메서드가 호출될 때 생성되는 인스턴스를 반복자라고
 Iterable 인터페이스에 정의되어 있는 유일한 메서드가 iterator이며,<br/>
 Collection 인터페이스에 정의되어 있는 iterator메서드는 인터페이스간 상속에 의한 것입니다.<br/>
 
-추가 예정
+## 4. 반복자 사용 이유
+
+앞서 본 예제 IntroLinkedList, IteratorUsage의 데이터 참조방식만 보면<br/>
+반복자의 사용에 큰 의미가 있는지 애매합니다.<br/>
+
+반복자의 의미는 참조방식에 큰 의의가 있는것이 아닙니다.<br/>
+반복자는 **컬렉션 클래스의 종류에 상관없이 동일한 형태의 데이터 참조방식을 유지**합니다.<br/>
+
+예제의 LinkedList인터페이스의 경우 데이터 참조를 위해 정의된 메서드는 get() 메서드입니다.<br/>
+List 인터페이스들은 저장순서가 유지되기 때문에 해당 메서드가 데이터참조에 어울리는 메서드입니다.<br/>
+
+그러나 컬렉션 클래스들 중에는 데이터의 저장순서가 유지되지 않는 것도 있습니다.<br/>
+이런 클래스들은 get이라는 메서드 자체가 정의되어 있지 않으며, 그렇기 때문에 반복자가 필요합니다.<br/>
+
+또, 반복자는 저장된 데이터 전부를 참조할 때 매우 유용합니다.<br/>
+예제를 하나 보겠습니다.<br/>
+
+```java
+import java.util.Iterator;
+import java.util.HashSet;
+
+class UsefulIterator{
+    public static void main(String[] args){
+        HashSet<String> set = new HashSet<String>();
+        set.add("First");
+        set.add("Second");
+        set.add("Third");
+        set.add("Fourth");
+
+        Iterator<String> itr = set.iterator();
+
+        System.out.println("반복자를 이용한 1차 출력과 \"Third\" 삭제");
+        while(itr.hasNext()){
+            String curStr = itr.next();
+            System.out.println(curStr);
+            if(curStr.compareTo("Third") == 0){
+                itr.remove();
+            }
+        }
+
+        System.out.println("\n\"Third\" 삭제 후 반복자를 이용한 2차 출력 ");
+        itr = set.iterator();
+        while(itr.hasNext()){
+            System.out.println(itr.next());
+        }
+    }
+}
+```
+
+위 예제는 IteratorUsage의 코드의 LinkedList\<String\>를 HashSet\<String\>으로 변경한<br/>
+것입니다.<br/>
+
+해당 코드에서는 get 메서드가 정의되어 있지 않습니다.<br/>
+따라서 반복자를 기반으로 코드를 작성하지 않았다면, 코드의 상당 부분이 변경되어야 했을 것입니다.<br/>
+
+## 5. 컬렉션 클래스를 이용한 int형 정수 여러개 저장
+
+컬랙션 클래스를 이용해서 int형 정수를 열 개 저장하는 것은 생각보다 단순하지 않습니다.<br/>
+
+기본 자료형을 기반으로 제네릭 인스턴스를 생성할 수 없기 때문입니다.<br/>
+
+```java
+ArrayList<int> arr = new ArrayList<int>();
+LinkedList<int> link = new LinkedList<int>();
+```
+
+이런식으로 컬랙션 인스턴스의 생성이 불가능합니다.<br/>
+
+이것을 해결하는 방법은 앞선 포스트에서 다룬 Wrapper 클래스와 Auto Boxing, Unboxing을 사용하면<br/>
+가능합니다.<br/>
+
+```java
+import java.util.Iterator;
+import java.util.LinkedList;
+
+class PrimitiveCollection{
+    public static void main(String[] args){
+        LinkedList<Integer> list = new LinkedList<Integer>();
+        list.add(10); //AutoBoxing
+        list.add(20); //AutoBoxing
+        list.add(30); //AutoBoxing
+
+        Iterator<Integer> itr = list.iterator();
+
+        while(itr.hasNext()){
+            int num = itr.next(); //Auto Unboxing
+            System.out.println(num);
+        }
+    }
+}
+```
