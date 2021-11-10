@@ -25,6 +25,7 @@ Java는 예외처리를 통해 프로그램의 비정상 종료를 막고 (프�
 1. 시스템 오류 (error)<br/>
    JVM에서 발생하며 프로그래머가 처리할 수 없습니다.<br/>
    동적 메모리를 모두 사용한 경우나, stack over flow등이 있습니다.<br/>
+   (재귀 호출)<br/>
 
 2. 예외 (Exception)<br/>
    프로그램에서 제어할 수 있는 오류를 말합니다.<br/>
@@ -87,8 +88,11 @@ class ExceptionHandleUseIf{
 ## 3. 예외 클래스
 
 모든 예외 클래스의 최상위 클래스는 Exception 클래스입니다.<br/>
+(but 모든 예외클래스가 상속하는 Thorwable 클래스의 하위 클래스)<br/>
 
 ![예외 클래스](/images/java_exception_class.png)<br/>
+
+대부분 Runtime Exception(실행중 발생하는 예외들)은 JVM에서 처리해주지 않으므로 필요한 경우 적어줘야 합니다.<br/>
 
 ## 4. try-catch문으로 예외 처리하기
 
@@ -181,17 +185,69 @@ try catch마다 리소스를 해제하는 것은 번거로우니까 finally에�
   close()가 호출됨
 - FileInputStream의 경우 AutoCloseable을 구현하고 있음<br/>
 
+```java
+import java.io.*;
+
+public class ExceptionTest{
+  public static void main(String[] args){
+    FileInputStream fis = null;
+
+    try(FileInputStream fis = new FileInputStream("a.txt")){
+      //자동으로 해제됨.
+    }catch(FileNotFoundException e){
+      System.out.println(e);
+    }catch(IOException e){
+      System.out.println(e);
+    }
+  }
+}
+```
+
 ## 7. AutoClosealbe 인터페이스 사용하기
 
 AutoCloseable 인터페이스를 구현한 클래스를 만들고 close()가 잘 호출되는지 확인해 보겠습니다.<br/>
 
 ```java
-public class AutoCloseObj implements AutoCloseable{
+class AutoCloseObj implements AutoCloseable{
     @Override
     public void close() throws Exception{
         System.out.println("리소스가 close() 되었습니다");
     } //close 메서드 구현
 }
+
+public class AutoCloseTest{
+  public static vodi main(String[] args){
+    try(AutoCloseObj obj = new AutoCloseObj()){
+      //throw new Exception();
+    }catch(Exception e){
+      System.out.println(e);
+    }
+  }
+}
 ```
 
 ## 8. 향상된 try-with-resources 문
+
+자바 9에서 제공되는 구문입니다.<br/>
+
+자바 9 이전<br/>
+
+```java
+AutoCloseObj obj = new AutoCloseObj();
+try(AutoCloseObj obj2 = obj){
+  throw new Exception();
+}catch(Exception e){
+  System.out.println("예외 부분입니다.");
+}
+```
+
+자바 9 이후<br/>
+
+```java
+AutoCloseObj obj = new AutoCloseObj();
+try(obj){//외부에서 선언한 변수를 그대로 쓸 수 있음
+  throw new Exception();
+}catch(Exception e){
+  System.out.println("예외 부분입니다.");
+}
+```

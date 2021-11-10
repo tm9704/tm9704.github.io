@@ -17,7 +17,39 @@ last_modified_at: "2021-10-27 15:30:00"
 - try 블록으로 예외를 처리하지 않고, 메서드 선언부에 throws를 추가합니다.
 - 예외가 발생한 메서드에서 예외처리를 하지 않고, 해당 메서드를 호출한 곳에서 예외 처리를 한다는 의미입니다.<br/>
   (책임 전가)
-- main()에서 throws를 사용하면 가상머신에서 처리가 됩니다.
+- main()에서 throws를 사용하면 가상머신에서 처리가 됩니다.(에러 발생)
+
+```java
+public class ThrowsException{
+  public Class loadClass(String fileName, String className) throws FileNotFoundException, ClassNotFoundException{
+    FileInputStream fis = new FileInputStream(fileName);
+    Class c = Class.forName(className);
+    return c;
+  }
+
+  public static void main(String[] args){
+    ThrowsException test = new ThrowsException();
+    try{
+      test.loadClass("b.txt", "java.lang.string");
+      }catch (FileNotFoundExcpetion e){
+        System.out.println(e);
+      }catch (ClassNotFoundException e){
+        System.out.println(e);
+      }catch (Exceptino e){
+        System.out.println(e);
+      }
+      System.out.println("end");
+
+      /*
+      try{
+        test.loadClass("a.txt", "java.lang.String");
+      }catch(FileNotFoundException | ClassNotFoundException e){
+        e.printStackTrace();
+      }
+      */
+  }
+}
+```
 
 ## 2. 다중 예외처리하기
 
@@ -50,10 +82,41 @@ public static void main(String[] args){
 예시를 하나 보겠습니다.<br/>
 
 ```java
-public class IDFormatException extends Exception{
+class IDFormatException extends Exception{
     public IDFormatException(String message){
         super(message);
     }
+}
+
+public class IDFormatTest{
+  private String userID;
+
+  public String getUserID(){
+    return userID;
+  }
+
+  public void setUser(String userID) throws IDFormatException{
+    //사용하는곳에서 처리를 해라
+    if(userID == null){
+      throw new IDFormatException("아이디는 null일 수 없습니다.");
+    }else if(userID.length() < 8 || userID.length() >20){
+      throw new IDFormatException("아이디는 8자 이상 20자 이하로 쓰세요");
+    }
+
+    this.userID = userID;
+  }
+
+  public static void main(String[] args){
+    IDFormatTest = idTest - new IDFormatTest();
+
+    String myId = null;
+
+    trys{
+        idTest.setUserID(myId);
+    }catch(IDForamat e{
+      System.out.println(e);
+    })
+  }
 }
 ```
 
