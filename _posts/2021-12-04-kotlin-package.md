@@ -20,8 +20,8 @@ last_modified_at: "2021-12-04 15:30:00"
 패키지는 파일(클래스)로 구성되어 있습니다.<br/>
 
 ![package1](/images/kotlin_package1.png/){: width="300" height="350"}
-![package2](/images/kotlin_package2.png/){: width="300" height="350"}<br/>
-
+![package2](/images/kotlin_package2.png/){: width="300" height="350"}
+<br/>
 위의 사진에서 PackageTest 프로젝트에는 PackageTest 모듈과 OtherModule 모듈이 있고,<br/>
 PackageTest모듈 안에는 com.example.edu패키지와 default 패키지가 있고,<br/>
 그 안에는 파일들이 있습니다.<br/>
