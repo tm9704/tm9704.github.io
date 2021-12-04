@@ -1,6 +1,6 @@
 ---
 title: "Kotlin(1) - 코틀린 시작하기"
-excerpt: "Java IO Stream"
+excerpt: "Kotlin Start"
 toc: true
 toc_sticky: true
 categories:
