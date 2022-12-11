@@ -165,3 +165,151 @@ last_modified_at: "2022-12-10 20:40:00"
    x의 값과 parseInt(s)의 반환값이 일치하면 print("일치함")을 수행함.
 
 6. when문에 in 연산자와 범위 지정자 사용하기
+   when문 안에서도 in 연산자와 범위 연산자를 사용할 수 있음.<br/>
+
+   ```
+   when(x){
+       in 1..10 -> print("x는 1 이상 10 이하입니다.")
+       !in 10..20 -> print("x는 10 이상 20 이하의 범위에 포함되지 않습니다.")
+       else -> print("x는 어떤 범위에도 없습니다.")
+   }
+   ```
+
+   in 연산자 앞에 느낌표를 사용하면 해당 범위 이외의 요소를 가리키게 됨.<br/>
+
+7. when과 is 키워드 함께 사용하기
+   is 키워드를 사용하면 특정 자료형을 검사할 수 있음.<br/>
+   when문과 is 키워드를 사용하면 어떤 변수에 할당된 값의 자료형을 검사하여 자료형에 따라
+   문장을 실행하도록 프로그램을 구성할 수 있음<br/>
+
+   ```
+   val str = "안녕하세요"
+   val result = when(str) {
+       is String -> "문자열입니다."
+       else -> false
+   }
+   ```
+
+   변수 str의 자료형이 String인 경우 뒤에 있는 문자열을 result에 할당함.<br/>
+
+8. 인자가 없는 when문
+   when문에 인자가 주어지지 않으면 else if문처럼 각각의 조건을 실행할 수 있음 <br/>
+
+   ```
+   fun main(){
+       print("Enter the score: ")
+       var score = readLine()!!.toDouble()
+       var grade: Char = 'F'
+
+       when {
+           score >= 90.0 -> grade = 'A'
+           score in 80.0..89.9 -> grade = 'B'
+           score in 70.0..79.9 -> grade = 'C'
+           score < 70.0 -> grade = 'F'
+       }
+
+       println("Score: $score, Grade: $grade")
+   }
+   ```
+
+   이런식으로 인자를 두지 않는 경우 조건이나 표현식을 직접 만들어서 쓸 수 있음<br/>
+
+9. 다양한 자료형의 인자 받기
+
+   ```
+   fun main() {
+       cases("Hello")
+       cases(1)
+       cases(System.currentTimeMillis())
+       cases(MyClass())
+   }
+
+   fun cases(obj: Any){
+       when(obj){
+           1 -> println("Int: $obj")
+           "Hello" -> println("String: $obj")
+           is Long -> println("Long: $obj")
+           !is String -> println("Not a String")
+           else -> println("Unknown")
+       }
+   }
+   ```
+
+## 2. 반복문
+
+반복문은 반복문 블록 안에 있는 코드를 반복하여 실행하는 명령문.<br/>
+
+1. for문
+   변수를 선언하고 조건식에 따라 변수 값을 반복해서 증감하는 구문.<br/>
+   java와는 다르게 in 연산자를 사용해 for문을 사용<br/><br/>
+
+   for문은 변수의 값이 범위 안에 있다면 계속해서 for의 본문을 수행함<br/>
+   범위 외의 값이 되면 for의 본문을 탈출함<br/>
+
+   ```
+   for(x in 1..5){
+       println(x)
+   }
+   ```
+
+   위 처럼 본문이 한줄이라면 중괄호 생략도 가능함.<br/>
+
+2. 하행, 상행 및 다양한 반복 방법
+   하행<br/>
+
+   ```
+   for (i in 5 downTo 1) print(i)
+   ```
+
+   2단계 증가<br/>
+
+   ```
+   for (i in 1..5 step 2) print(i)
+   ```
+
+3. while 문
+   while문은 조건식이 true를 만족하는 경우 while문의 블록을 무한히 반복.<br/>
+   조건식이 false가 되면 실행문이 중단되어 루프를 빠져나감.<br/>
+
+   ```
+   var i = 1
+   while (i<=5){
+       println("$i")
+       ++i
+   }
+   ```
+
+4. do~while문
+   while은 조건식을 먼저 검사한 후 반복을 진행하기 때문에 조건식이 false인 경우
+   작업이 한번도 진행되지 않음<br/>
+   do~while의 경우 do블록에 작성한 본문을 한 번 실행한 다음 마지막에 조건식을 검사해
+   true가 나오면 작업을 반복함<br/>
+
+   ```
+   fun main () {
+       do{
+           print("Enter an integer: ")
+           val input = readLine()!!.toInt()
+
+           for(i in 0..(input - 1)){
+               for(j in 0..(input-1)) print((i+j) % input + 1)
+               println()
+           }
+       } while(input != 0)
+   }
+   ```
+
+## 3. 흐름의 중단과 반환
+
+1. return 문
+   보통 return문은 값을 반환하는데 사용<br/>
+
+   ```
+   fun add(a: Int, b: Int): Int {
+       return a + b
+       println("이 코드는 실행되지 않음")
+   }
+   ```
+
+   return 이후의 코드는 실행되지 않는데, return이 사용되면 코드 흐름을 중단하고
+   함수의 역할을 끝내기 때문<br/>
