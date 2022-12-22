@@ -127,8 +127,7 @@ last_modified_at: "2022-12-10 20:40:00"
    }
    ```
 
-   when 블록의 안을 보면 화살표(->) 왼쪽에는 일치하는 값, 표현식, 범위로 조건을 나타내고,<br/>
-   오른쪽에는 수행할 문장을 사용함<br/>
+   when 블록의 안을 보면 화살표(->) 왼쪽에는 일치하는 값, 표현식, 범위로 조건을 나타내고, 오른쪽에는 수행할 문장을 사용함<br/>
 
    ```
    when(x) {
@@ -313,3 +312,125 @@ last_modified_at: "2022-12-10 20:40:00"
 
    return 이후의 코드는 실행되지 않는데, return이 사용되면 코드 흐름을 중단하고
    함수의 역할을 끝내기 때문<br/>
+
+2. return으로 Unit 반환하기
+   리턴하는 값 없이 return만 사용하게 될 경우, Unit이라는 자료형 자체를 반환한다.<br/>
+
+   ```
+   //1. Unit을 명시적으로 반환
+   fun hello(name: String): Unit {
+       println(name)
+       return Unit
+   }
+
+   //2. Unit 이름을 생략한 반환
+   fun hello(name: String): Unit {
+       println(name)
+       return
+   }
+
+   //3. return문 자체를 생략
+   fun hello(name: String) {
+       println(name)
+   }
+   ```
+
+   위 세개의 함수들은 모두 동일한 결과를 반환함.<br/>
+
+3. 람다식에서 return 사용하기
+   인라인(inline)으로 선언되지 않은 람다식에서는 return을 그냥 사용할 수 없음.<br/>
+   return@label과 같이 라벨(label) 표기와 함께 사용해야 한다.<br/>
+   라벨이란 코드에서 특정한 위치를 임의로 표시한 것으로, @ 기호와 이름을 붙여서 사용한다.<br/>
+   인라인으로 선언된 함수에서 람다식을 매개변수로 사용하면 람다식에서 return을 사용할 수 있음.<br/>
+
+   ```
+   fun main(){
+    retFunc()
+   }
+
+   inline fun inlineLambda(a: Int, b: Int, out: (Int, Int) -> Unit) {
+    out(a,b)
+   }
+
+   fun retFunc() {
+    println("start of retFunc") //1
+    inlineLambda(13,3) { a,b -> //2
+        val result = a + b
+        if(result > 10) return //3
+        println("result: $result") //4
+    }
+    println("end of retFunc") //5
+   }
+   ```
+
+   inlineLambda() 함수는 람다식을 매개변수로 사용하는 인라인 함수.<br/>
+   retFunc() 함수가 호출되어 실행될 때 1번의 내용을 출력하고, 2번으로 진입해 람다식을 인자로 사용하고 있음.<br/>
+   만약 a와 b인자의 합이 10을 넘는 경우에는 return을 사용한다.<br/>
+   return이 호출되면 람다식 바깥의 retFunc() 함수까지 빠져 나가게 된다.<br/>
+   4,5번은 실행되지 않고, 이런 반환을 비지역 반환이라고 한다.<br/>
+
+4. 람다식에서 라벨과 함께 return 사용하기
+   비지역 반환을 방지하고 가장 가까운 함수인 retFunc() 함수 위치로 빠져나가게 하려면 어떻게 해야하는가.<br/>
+   람다식에서 라벨을 정의해 return을 사용해야 한다.<br/>
+   라벨을 지정하기 위해서는 @ 기호를 라벨 뒤에 붙여 **라벨이름@**과 같이 지정하고, 사용할 때는 앞부분에 **return@라벨이름** 으로 지정함.<br/>
+
+   ```
+   fun main(){
+       retFunc()
+   }
+
+   fun inlineLambda(a: Int, b: Int, out: (Int, Int) -> Unit) { // inline 제거
+       out(a,b)
+   }
+
+   fun retFunc(){
+       println("start of retFunc")
+       inlineLambda(13, 3) lit@{a,b -> // 1
+           val result = a + b
+           if(result > 10) return@lit //2
+           println("result: $result")
+       } //3
+
+       println("end of retFunc")//4
+   }
+   ```
+
+   위 코드의 inlineLambda() 함수는 코드 앞에 inline을 삭제했으므로 이제 인라인 함수가 아님.
+   따라서 inline을 지운 순간 return에 오류가 생긴다.<br/>
+   이때 1번처럼 람다식 블록 앞에 라벨(lit@)을 정의함. 그리고 2번처럼 return에 @으로 시작하는 라벨(@lit)을 붙여줌.<br/>
+   그러면 오류가 사라지고 result가 10보다 큰 경우 3으로 빠져나온다.<br/>
+
+5. 암묵적 라벨
+   람다식 표현식 블로게 직접 라벨을 쓰는 것이 아닌 람다식의 명칭 그대로를 라벨처럼 사용할 수 있는데, 이것을 암묵적 라벨이라고 함.<br/>
+
+   ```
+   fun retFunc() {
+       println("start of retFunc")
+       inlineLambda(13,3) {a,b ->
+           val result = a + b
+           if(result > 10) return@inlineLambda
+           println("result: $result")
+       }
+
+       println("end of retFunc")
+   }
+   ```
+
+   위의 코드처럼 람다식의 이름을 직접 라벨처럼 사용할 수 있음.<br/>
+
+6. 익명 함수를 사용한 반환
+   람다식 대신 익명함수를 넣을 수도 있음.<br/>
+   이 때는 라벨을 사용하지 않고도 가까운 익명함수 자체가 반환되므로 위와 동일한 결과를 가질 수 있음.<br/>
+
+   ```
+   fun retFunc() {
+       println("start of retFunc")
+       inlineLambda(13, 3, fun (a,b) {
+           val result = a + b
+           if(result > 10) return
+           println("result: $result")
+       })
+       }
+       println("end of retFunc")
+   }
+   ```
