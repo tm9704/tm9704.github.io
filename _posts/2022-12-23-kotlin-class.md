@@ -8,7 +8,7 @@ categories:
 tags:
   - Kotlin
 date: "2022-12-23 11:40:00"
-last_modified_at: "2022-12-10 12:40:00"
+last_modified_at: "2022-12-23 12:40:00"
 ---
 
 ## 1. 클래스와 객체의 정의
