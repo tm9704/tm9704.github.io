@@ -1,5 +1,5 @@
 ---
-title: "Android(2) - 코틀린"
+title: "Android(2) - 코틀린 시작하기"
 excerpt: "Android Kotlin"
 toc: true
 toc_sticky: true
