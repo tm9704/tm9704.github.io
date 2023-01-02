@@ -102,7 +102,7 @@ analytics:
 author:
   name: "Min Hyung"
   avatar: # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio: "JAVA로 세계정복"
+  bio: "Kotlin으로 세계정복"
   location: "Seoul, South Korea"
   email:
   links:
@@ -277,3 +277,5 @@ defaults:
       comments: true
       share: true
       related: true
+
+future: true
