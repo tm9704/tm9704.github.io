@@ -44,7 +44,6 @@ last_modified_at: "2022-12-10 20:40:00"
    fun main() {
        val a = 12
        val b = 7
-
        val max = if(a>b) {
            println("a 선택")
            a
@@ -52,7 +51,6 @@ last_modified_at: "2022-12-10 20:40:00"
            println("b 선택")
            b
        }
-
        println(max)
    }
    ```
@@ -86,7 +84,6 @@ last_modified_at: "2022-12-10 20:40:00"
        print("Enter the score: ")
        val score = readLine()!!.toDouble()
        var grade: Char = 'F'
-
        if(score >= 90.0){
            grade = 'A'
        }else if(score >= 80.0 && score <= 89.9){
@@ -94,7 +91,6 @@ last_modified_at: "2022-12-10 20:40:00"
        }else if(score >= 70.0 && score <= 79.9){
            grade = 'C'
        }
-
        println("Score: $score, Grade: $grade")
    }
    ```
@@ -199,14 +195,12 @@ last_modified_at: "2022-12-10 20:40:00"
        print("Enter the score: ")
        var score = readLine()!!.toDouble()
        var grade: Char = 'F'
-
        when {
            score >= 90.0 -> grade = 'A'
            score in 80.0..89.9 -> grade = 'B'
            score in 70.0..79.9 -> grade = 'C'
            score < 70.0 -> grade = 'F'
        }
-
        println("Score: $score, Grade: $grade")
    }
    ```
@@ -222,7 +216,6 @@ last_modified_at: "2022-12-10 20:40:00"
        cases(System.currentTimeMillis())
        cases(MyClass())
    }
-
    fun cases(obj: Any){
        when(obj){
            1 -> println("Int: $obj")
@@ -289,7 +282,6 @@ last_modified_at: "2022-12-10 20:40:00"
        do{
            print("Enter an integer: ")
            val input = readLine()!!.toInt()
-
            for(i in 0..(input - 1)){
                for(j in 0..(input-1)) print((i+j) % input + 1)
                println()
@@ -322,13 +314,11 @@ last_modified_at: "2022-12-10 20:40:00"
        println(name)
        return Unit
    }
-
    //2. Unit 이름을 생략한 반환
    fun hello(name: String): Unit {
        println(name)
        return
    }
-
    //3. return문 자체를 생략
    fun hello(name: String) {
        println(name)
@@ -347,11 +337,9 @@ last_modified_at: "2022-12-10 20:40:00"
    fun main(){
     retFunc()
    }
-
    inline fun inlineLambda(a: Int, b: Int, out: (Int, Int) -> Unit) {
     out(a,b)
    }
-
    fun retFunc() {
     println("start of retFunc") //1
     inlineLambda(13,3) { a,b -> //2
@@ -378,11 +366,9 @@ last_modified_at: "2022-12-10 20:40:00"
    fun main(){
        retFunc()
    }
-
    fun inlineLambda(a: Int, b: Int, out: (Int, Int) -> Unit) { // inline 제거
        out(a,b)
    }
-
    fun retFunc(){
        println("start of retFunc")
        inlineLambda(13, 3) lit@{a,b -> // 1
@@ -390,7 +376,6 @@ last_modified_at: "2022-12-10 20:40:00"
            if(result > 10) return@lit //2
            println("result: $result")
        } //3
-
        println("end of retFunc")//4
    }
    ```
@@ -411,7 +396,6 @@ last_modified_at: "2022-12-10 20:40:00"
            if(result > 10) return@inlineLambda
            println("result: $result")
        }
-
        println("end of retFunc")
    }
    ```
@@ -472,7 +456,6 @@ last_modified_at: "2022-12-10 20:40:00"
 
    ```
    fun greet() = {println("Hello")}
-
    greet()
    ```
 
