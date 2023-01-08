@@ -145,3 +145,15 @@ last_modified_at: "2023-01-08 11:35:00"
         </RadioGroup>
     </LinearLayout>
    ```
+4. **에디트 텍스트**<br/>
+   EditText는 사용자가 글을 입력할 수 있는 뷰이다.<br/>
+   EditText에서 자주 사용하는 속성으로는<br/>
+   1. android:lines, android:maxLines<br/>
+      EditText는 한 줄 입력 크기로 출력되었다가 사용자가 키보드에서 엔터를 누르면 아래로 늘어나서
+      여러 줄 입력 크기가 된다.<br/>
+      처음 부터 여러 줄 입력 크기로 나오게 하는 속성이 android:lines이다.<br/>
+      값을 넣으면 화면에 보여질 때 해당 값의 줄 수로 뷰가 보이고, 그 안에서 스크롤을 또 할 수 있음.<br/>
+      maxLines와 약간 차이가 있는데 maxLines는 처음에는 한 줄로 보이고 속성 값으로 줄 수를 제한시키는 거임.<br/>
+   2. android:inputType<br/>
+      inputType은 EditText에 글을 입력할 때 올라오는 키보드를 지정하는 속성이다.<br/>
+      속성값으로 phone을 사용하면 전화번호 입력 모드로 올라오고 한 줄 입력으로 강제됨.<br/>
