@@ -1,6 +1,6 @@
 ---
 title: "Android(8) - 레이아웃(1)"
-excerpt: "Android Kotlin View(1)"
+excerpt: "Android Kotlin Layout(1)"
 toc: true
 toc_sticky: true
 categories:
@@ -8,7 +8,7 @@ categories:
 tags:
   - Android
 date: "2023-01-09 15:35:00"
-last_modified_at: "2023-01-08 16:35:00"
+last_modified_at: "2023-01-09 16:35:00"
 ---
 
 ## 1. LinearLayout
