@@ -108,10 +108,10 @@ author:
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
-      url: "tm9704@korea.ac.kr"
-    - label: "Website"
+      url: "mailto:minhyung970430@gmail.com"
+    - label: "Portfolio"
       icon: "fas fa-fw fa-link"
-      url: "https://tm9704.github.io"
+      url: "https://tm9704.github.io/portfolio"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
@@ -123,7 +123,7 @@ author:
       url: "https://github.com/tm9704"
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url: "https://instagram.com/"
+      url: "https://www.instagram.com/minhyyyoung/"
 
 # Site Footer
 footer:
@@ -145,7 +145,7 @@ footer:
       # url:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
-      # url:
+      url: "https://www.instagram.com/minhyyyoung/"
 
 # Reading Files
 include:
