@@ -113,7 +113,7 @@ author:
       icon: "fas fa-fw fa-link"
       url: "https://tm9704.github.io/portfolio"
     - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin-square"
+      icon: "fas fa-fw fa-link"
       url: "https://www.linkedin.com/in/tm9704/"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
@@ -129,7 +129,7 @@ author:
 footer:
   links:
     - label: "LinkedIn"
-      icon: "fab fa-fw fa-linkedin-square"
+      icon: "fas fa-fw fa-link"
       url: "https://www.linkedin.com/in/tm9704/"
     - label: "Facebook"
       icon: "fab fa-fw fa-facebook-square"
